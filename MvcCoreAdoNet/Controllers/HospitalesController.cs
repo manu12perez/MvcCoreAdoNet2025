@@ -41,6 +41,13 @@ namespace MvcCoreAdoNet.Controllers
             return RedirectToAction("Index");
         }
 
+        public IActionResult Delete(int id)
+        {
+            this.repo.DeleteHospital(id);
+            return RedirectToAction("Index");
+        }
+
+
         public IActionResult Update(int id)
         {
             Hospital hospital = this.repo.FindHospital(id);
